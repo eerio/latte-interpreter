@@ -19,7 +19,7 @@ This repository contains an interpreter for the [Latte](https://www.mimuw.edu.pl
 The Latte Interpreter is designed to execute programs written in the Latte programming language. It takes Latte source code as input and runs it, producing the corresponding output. The interpreter performs lexical analysis, parsing, and static type checking, followed by the execution of the input program. It is built using Haskell, leveraging the power and expressiveness of the functional programming paradigm.
 
 What do I personally like in this implementation? The types! Look at this:
-![Code](https://github.com/eerio/latte-interpreter/blob/0f80c0cff471a4c5a941c2dda57667bc3a5f2eb1/app/Interpreter.hs#L56-L72)
+[Code](https://github.com/eerio/latte-interpreter/blob/0f80c0cff471a4c5a941c2dda57667bc3a5f2eb1/app/Interpreter.hs#L56-L72)
 
 
 ## Features
