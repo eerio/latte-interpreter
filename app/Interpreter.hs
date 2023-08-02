@@ -53,19 +53,27 @@ instance Show Exc where
 
 instance Exception Exc
 
+-- Loc type is an abstraction for indexing the cells of our memory abstraction
 type Loc = Int
+-- Env is the mapping from a variable/function/etc. name to a memory cell with it's value
 type Env = Map Ident Loc
+-- all the types supported by my version of Latte
 data Val = ValVoid
   | ValInt !Integer
   | ValBool !Bool
   | ValStr !String
   | ValFun !Env ![ArgC] !BlockC
   deriving Show
+-- abstraction of the memory: maps a cell number to a true value it holds
 type Store = Map Loc Val
+-- type of stdout
 type Log = Data.Sequence.Seq String
 
+-- the most important thing: the type of `execution` of the interpreter.
 type IM a = ExceptT Exc (RWST Env Log Store Identity) a
 
+-- a simple `malloc` function for our abstraction of the memory :)
+-- yes, the numbers grow indefinitely - NOP for this task
 alloc :: Store -> Loc
 alloc store = case Map.maxViewWithKey store of
   Nothing -> 0
