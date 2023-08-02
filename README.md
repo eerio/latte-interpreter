@@ -16,54 +16,47 @@ This repository contains an interpreter for the Latte programming language, impl
 
 ## Introduction
 
-The Latte Interpreter is designed to execute programs written in the Latte programming language. It takes Latte source code as input and runs it, producing the corresponding output. The interpreter performs lexical analysis, parsing, and semantic analysis, followed by the execution of the input program. It is built using Haskell, leveraging the power and expressiveness of the functional programming paradigm.
+The Latte Interpreter is designed to execute programs written in the Latte programming language. It takes Latte source code as input and runs it, producing the corresponding output. The interpreter performs lexical analysis, parsing, and static type checking, followed by the execution of the input program. It is built using Haskell, leveraging the power and expressiveness of the functional programming paradigm.
 
 ## Features
 
 - **Lexical Analysis:** Tokenizes the input Latte source code, identifying keywords, literals, and other language elements.
 - **Parsing:** Builds an Abstract Syntax Tree (AST) from the tokenized input using a parser implemented with Parsec library.
-- **Semantic Analysis:** Performs type checking and scope analysis to detect potential errors in the input program.
+- **Static Type Checking:** Performs type checking and scope analysis to detect potential errors in the input program.
 - **Interpretation:** Executes the input Latte program, producing the output based on the defined semantics.
 
 ## Getting Started
 
 To get started with the Latte Interpreter, follow these steps:
 
-1. **Prerequisites:** Ensure you have GHC (Glasgow Haskell Compiler) and Cabal installed on your system.
+1. **Prerequisites:** Ensure you have GHC 8.8.4 (Glasgow Haskell Compiler) installed on your system.
 
 2. **Clone the repository:** Clone this repository to your local machine using the following command:
 
 ```
-git clone https://github.com/your-username/latte-interpreter.git
+git clone https://github.com/eerio/latte-interpreter 
 ```
 
-3. **Build the Interpreter:** Navigate to the project directory and build the interpreter using Cabal:
+3. **Build the Interpreter:** Navigate to the project directory and build the interpreter using `make`:
 
 ```
-cd latte-interpreter
-cabal build
+cd latte-interpreter/app
+make
 ```
-
-
-4. **Run Tests:** Before using the interpreter, it is recommended to run the test suite to ensure everything is working correctly:
-
-```cabal test```
 
 ## Usage
 
-To use the Latte Interpreter, run the executable generated after building the project. The executable is typically located in the `dist/build/latte-interpreter/` directory.
-
-To interpret a Latte program, provide the path to the Latte source file as an argument:
+To use the Latte Interpreter, run the executable generated after building the project:
 
 ```
-./latte-interpreter path/to/your/latte_program.lat
+./interpreter good/03-fibonacci-assign.lt
 ```
 
 The interpreter will process the input file, perform the necessary analysis, and execute the program, displaying the output on the console.
 
 ## Examples
 
-To help you get started, this repository includes some example Latte programs in the `examples/` directory. You can use them to test the interpreter and observe its behavior with different inputs.
+To help you get started, this repository includes some example Latte programs in the `app/good/` directory (these are correct programs) and in the `app/bad` directory (these are the programs which should be rejected by the static type checker, the lexical analyser or throw a well-defined error during execution). You can use them to test the interpreter and observe its behavior with different inputs.
 
 ## Contributing
 
