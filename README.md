@@ -1,8 +1,8 @@
-# Latte Interpreter
+# Latte Interpreter in Haskell
 
-![Latte Logo](https://example.com/latte_logo.png)
+![Haskell Logo](https://wiki.haskell.org/wikiupload/4/4a/HaskellLogoStyPreview-1.png)
 
-This repository contains an interpreter for the Latte programming language, implemented in Haskell. The Latte language is a simple, statically-typed, imperative language with functional features. This project was developed as part of the course at the University of Warsaw (MIMUW).
+This repository contains an interpreter for the [Latte](https://www.mimuw.edu.pl/~ben/Zajecia/Mrj2011/Latte/) programming language, implemented in Haskell. The Latte language is a simple, statically-typed, imperative language with functional features. This project was developed as part of the course at the University of Warsaw (MIMUW).
 
 ## Table of Contents
 
