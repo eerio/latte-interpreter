@@ -1,0 +1,12 @@
+string user_of_id(int id) {
+    if (id == 0) { return "pawel"; }
+    else {
+        if (id == 1) { return "gawel"; }
+        else { return "unknown"; }
+    }
+}
+
+print("user of id 0: ");
+print(user_of_id(0));
+print("\nuser of id 2: ");
+print(user_of_id(2));

@@ -1,0 +1,12 @@
+int fib(int x) {
+    if (x <= 1) { return x; }
+    else { return fib(x - 1) + fib(x - 2); }
+}
+
+int main(string arg) {
+    int v = atoi(arg);
+    v = v + "pawel";
+    print(fib(v));
+
+    return 0;
+}

@@ -1,0 +1,10 @@
+błąd w gramatyce: można zrobić konstrukcję
+int x[7] = 9;
+(bo w decl mamy Type [Item] dla Item=LValue | LValue=Expr, LValue = Ident | Expr6[Expr])
+tak czy nie?
+to jest delikatne
+
+
+cat good/main.lt | cabal run latte
+bnfc -d --haskell --functor -m Latte.cf && make
+happy -gca --info=bad.txt Latte/Par.y

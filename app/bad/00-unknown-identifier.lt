@@ -1,0 +1,14 @@
+
+int foo(int x) {
+    return x + 1;
+}
+
+int bar(int y) {
+    return x + y + 7;
+}
+
+int main() {
+    return foo(bar(7));
+}
+
+main();

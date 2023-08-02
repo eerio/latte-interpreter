@@ -1,0 +1,12 @@
+int user_id(string name) {
+    if (name == 7) { return 0; }
+    else {
+        if (name == "gawel") { return 1; }
+        else { return 2; }
+    }
+}
+
+print("id of user pawel: ");
+printInt(user_id("pawel"));
+print("\nid of user gawel: ");
+printInt(user_id("gawel"));

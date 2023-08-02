@@ -1,0 +1,2 @@
+printInt(17);
+printInt(1 / 0);

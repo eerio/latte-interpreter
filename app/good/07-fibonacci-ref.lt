@@ -1,0 +1,22 @@
+void fib(int x, int &result) {
+    if (x <= 1) { result = x; }
+    int pprev=0;
+    int prev=1;
+    while (x > 1) {
+        result = pprev + prev;
+        pprev = prev;
+        prev = result;
+        x = x - 1;
+    }
+}
+
+int main(string arg) {
+    int n = atoi(arg);
+    int result;
+    fib(n, result);
+    printInt(result);
+
+    return 0;
+}
+
+main("10");

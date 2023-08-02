@@ -1,0 +1,74 @@
+/*
+ * Example of syntax of the Latte-like language proposed
+ * JPP @ MIMUW 2022/2023
+ */
+
+// 11. Funkcje przyjmujące i zwracające wartości dowolnych typów
+// 12. Statyczne typowanie
+// 6. Funkcje, rekurencja
+int fib(int i) {
+  // 2. Arytmetyka, porównania
+  if (i <= 1) { return i; }
+  else { return fib(i - 1) + fib(i - 2); }
+}
+
+// 7. Przekazywanie parametrów przez wartość, przez referencję
+// 14. Tablice indeksowane int
+void sum(int n, int[] arr, int& result) {
+  result = 0;
+  if (n == 0) { return; }
+  while (true) {
+    n--;
+    result = result + arr[n];
+
+    // 16. Break, continue
+    if (n <= 0) { break; }
+  }
+}
+
+// 17. Funkcje jako parametry, zwracanie funkcji w wyniku, domknięcia
+int(int) fun_increment (int(int) fun, int k) {
+  return lambda x: fun(x) + k;
+}
+
+
+// 1. Co najmniej 3 typy wartości
+int main(int argc, string[] argv) {
+  // 2. Literały
+  string msg = "Hello, ";
+  int n;
+
+  // 5. while, if
+  if (argc != 2) {
+    // 4. Print
+    print("Usage: ", argv[0], " [user name]\n");
+    return 1;
+  }
+
+  bool is_king = argv[1] == "The King";
+  
+  if (is_king) {
+    print(msg, "boss!\n");
+    // 3. Zmienne, operacja przypisania
+    n = 15;
+  } else {
+    print(msg, argv[1], "!\n");
+    n = 10;
+  }
+
+  int i = 0;
+  while (i < n) {
+    // 9. Przesłanianie identyfikatorów ze statycznym wiązaniem
+    int ith_fib = fib(i);
+    print(intToStr(ith_fib));
+    i++;
+  }
+
+  int(int) fib_incr = fun_increment(fib, 10);
+
+  // 10. Obsługa błędów wykonania
+  7 / 0;
+
+  return 0;
+}
+

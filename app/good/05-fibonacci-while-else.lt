@@ -1,0 +1,27 @@
+int fib(int x) {
+    if (x <= 0) { return 0; }
+    else {
+        if (x == 1) { return 1; }
+        else {
+            int pprev=0;
+            int prev=1;
+            int result;
+            while (x > 1) {
+                result = pprev + prev;
+                pprev = prev;
+                prev = result;
+                x = x - 1;
+            }
+            return result;
+        }
+    }
+}
+
+int main(string arg4) {
+    int v = atoi(arg4);
+    printInt(fib(v));
+
+    return 0;
+}
+
+main("17");
